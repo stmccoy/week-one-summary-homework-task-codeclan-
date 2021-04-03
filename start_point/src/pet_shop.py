@@ -27,7 +27,7 @@ def get_pets_sold(petshop_dictionary):
 def increase_pets_sold(petshop_dictionary, pets_sold):
     petshop_dictionary["admin"]["pets_sold"] += pets_sold
 
-#function takes a petshop dictionary as an arugment and returns the number of 
+#function takes a petshop dictionary as an argument and returns the number of 
 #pet dictionaries contained within the "pets" value. This value takes the form 
 #of a list, so the total pets is simply the length of that list
 def get_stock_count(petshop_dictionary):
