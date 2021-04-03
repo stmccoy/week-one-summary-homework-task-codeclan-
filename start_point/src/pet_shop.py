@@ -11,7 +11,7 @@ def get_pet_shop_name(petshop_dictionary):
 def get_total_cash(petshop_dictionary):
     return petshop_dictionary["admin"]["total_cash"]
 
-#function takes a petshop dictionary and a number as an argument and adds 
+#function takes a petshop dictionary and a number as arguments and adds 
 #the number passed to the ["admin"]["total_cash"] value of the petshop dictionary.
 #For losses pass a negative number to the function. 
 def add_or_remove_cash(petshop_dictionary, cash):
@@ -35,7 +35,7 @@ def get_stock_count(petshop_dictionary):
 
 #function takes a petshop dictionary and pet breed as an argument and returns 
 #the total number of pets of said breed from within the "pets", nested list, 
-#value, within the petshop dictionary.
+#value within the petshop dictionary.
 def get_pets_by_breed(petshop_dictionary, breed):
     breed_list = []
     for b in petshop_dictionary["pets"]:
@@ -44,7 +44,7 @@ def get_pets_by_breed(petshop_dictionary, breed):
     return breed_list
 
 #function takes a petshop dictionary and pet name as an argument and returns the 
-#pet dictionary associated with the pet name, from the "pets", nested list, value,
+#pet dictionary associated with the pet name, from the "pets", nested list, value
 #within the petshop dictionary. Function returns None if no pet name is found within
 #the "pets", nested list, value.
 def find_pet_by_name(petshop_dictionary, name):
@@ -61,7 +61,7 @@ def find_pet_by_name(petshop_dictionary, name):
 
 #function takes a petshop dictionary and pet name as an argument and removes said 
 #pet name from the pet's, nested list, value contained within the pet shop dictionary. 
-#Returns None if pet name not found with the "pet's", nested list, value
+#Returns None if the pet name is not found with the "pet's", nested list, value
 def remove_pet_by_name(petshop_dictionary, name):
     length_of_list_for_indexing = (len(petshop_dictionary["pets"])) - 1
     for i in range(length_of_list_for_indexing):
@@ -83,8 +83,8 @@ def get_customer_cash(customer_dictionary):
 def remove_customer_cash(customer_dictionary, cash_removed):
     customer_dictionary["cash"] -= cash_removed
 
-#function takes a customer dictionary and returns the "pets"
-#value for said customer dictionary. The "pets" value takes the form of 
+#function takes a customer dictionary and returns the number of "pets"
+#within said customer dictionary. The "pets" value takes the form of 
 #a nested list contained within the customer dictionary, so the 
 #pet count is simply the length of that list. 
 def get_customer_pet_count(customer_dictionary):
@@ -108,7 +108,7 @@ def customer_can_afford_pet(customer_dictionary, petshop_dictionary):
 #function takes in a petshop dictionary, a pet dictionary and a customer 
 #dictionary.
 # 
-#The function first checks whether pet dictionary exists, and it does this
+#The function first checks whether the pet dictionary exists, and it does this
 #by checking if the value is a dictionary or None type. If the value is a None 
 #type then the function returns False.
 # 
@@ -118,7 +118,7 @@ def customer_can_afford_pet(customer_dictionary, petshop_dictionary):
 # 
 #else, the function adds the pet dictionary to the customer dictionary "pets", nested
 #list, value. It then substracts the pet dictionary "price" value from the customer
-#dictionary "cash"" value, and adds said value to the ["admin"]["total_cash"] value
+#dictionary "cash" value, and adds said value to the ["admin"]["total_cash"] value
 #contained within the petshop dictionary. 
 # 
 #Finally it increases the ["admin"]["pets_sold"] value of the petshop dictionary by
