@@ -90,6 +90,14 @@ def get_customer_pet_count(customer_dictionary):
 def add_pet_to_customer(customer_dictionary, new_pet):
     customer_dictionary["pets"].append(new_pet)
 
+#function takes a customer and pet dictionary and compares the price
+#with the customer's cash to see if the customer can afford the pet
+def customer_can_afford_pet(customer_dictionary, petshop_dictionary):
+    if customer_dictionary["cash"] >= petshop_dictionary["price"]:
+        return True
+    return False
+
+
 
 
     
