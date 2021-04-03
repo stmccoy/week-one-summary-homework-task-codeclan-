@@ -1,3 +1,4 @@
+import pdb
 # WRITE YOUR FUNCTIONS HERE
 
 #function takes a petshop dictionary as an argument and 
@@ -51,8 +52,12 @@ def find_pet_by_name(petshop_dictionary, name):
     for n in petshop_dictionary["pets"]:
         if n["name"] == name:
             name_dict["name"] = n["name"]
+            name_dict["pet_type"] = n["pet_type"]
+            name_dict["breed"] = n["breed"]
+            name_dict["price"] = n["price"]
     if name_dict != {}:
         return name_dict
+
 
 #function takes a petshop dictionary and pet name
 #as an argument and removes said pet name from the nested list of
@@ -97,8 +102,24 @@ def customer_can_afford_pet(customer_dictionary, petshop_dictionary):
         return True
     return False
 
+#function takes in a petshop dictionary, a pet dictionary
+#and a customer dictionary, checks whether the customer can afford
+#the pet and if they can transfers the pet to the customer from the 
+#pet shop dictionar and the funds from the customer to the petshop dictionary
 
-
+def sell_pet_to_customer(petshop_dictionary, pet_dictionary, customer_dictionary):
+    if pet_dictionary is None:
+        return False   
+    else: 
+        lst_index_position_for_pet = petshop_dictionary["pets"].index(pet_dictionary)
+        customer_can_afford_pet(customer_dictionary, pet_dictionary)
+        lst_index_position_for_pet = petshop_dictionary["pets"].index(pet_dictionary)
+        customer_dictionary["pets"].append(petshop_dictionary["pets"][lst_index_position_for_pet])
+        customer_dictionary["cash"] -= pet_dictionary["price"]
+        petshop_dictionary["admin"]["pets_sold"] += 1
+        petshop_dictionary["admin"]["total_cash"] += pet_dictionary["price"]
+        
+    
 
     
     
